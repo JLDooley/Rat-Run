@@ -84,7 +84,7 @@
     },
     {
       "name": "/actions/mech/in/shoot",
-      "type": "vector1"
+      "type": "boolean"
     }
   ],
   "action_sets": [

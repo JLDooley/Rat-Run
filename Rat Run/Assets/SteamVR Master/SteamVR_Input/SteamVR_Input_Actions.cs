@@ -55,7 +55,7 @@ namespace Valve.VR
         
         private static SteamVR_Action_Pose p_mixedreality_ExternalCamera;
         
-        private static SteamVR_Action_Single p_mech_shoot;
+        private static SteamVR_Action_Boolean p_mech_shoot;
         
         public static SteamVR_Action_Boolean default_InteractUI
         {
@@ -209,11 +209,11 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Single mech_shoot
+        public static SteamVR_Action_Boolean mech_shoot
         {
             get
             {
-                return SteamVR_Actions.p_mech_shoot.GetCopy<SteamVR_Action_Single>();
+                return SteamVR_Actions.p_mech_shoot.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
@@ -277,11 +277,11 @@ namespace Valve.VR
                     SteamVR_Actions.default_SnapTurnRight,
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
-                    SteamVR_Actions.buggy_Reset};
+                    SteamVR_Actions.buggy_Reset,
+                    SteamVR_Actions.mech_shoot};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
-                    SteamVR_Actions.buggy_Throttle,
-                    SteamVR_Actions.mech_shoot};
+                    SteamVR_Actions.buggy_Throttle};
             Valve.VR.SteamVR_Input.actionsVector2 = new Valve.VR.SteamVR_Action_Vector2[] {
                     SteamVR_Actions.platformer_Move,
                     SteamVR_Actions.buggy_Steering};
@@ -328,7 +328,7 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Brake = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Brake")));
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
-            SteamVR_Actions.p_mech_shoot = ((SteamVR_Action_Single)(SteamVR_Action.Create<SteamVR_Action_Single>("/actions/mech/in/shoot")));
+            SteamVR_Actions.p_mech_shoot = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/mech/in/shoot")));
         }
     }
 }
