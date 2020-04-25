@@ -9,28 +9,19 @@ public class BoxingGlove : MonoBehaviour
 {
         
     public SteamVR_Action_Boolean inputAction;
-
-        
+  
     public SteamVR_Input_Sources source;
-
-        
-    public Transform spawner;
-
-        
+ 
     public GameObject fist;
-
-        
+    
     public Interactable interactable;
-
-       
-    private float timer = 0f;
 
     public bool primed = true;
 
+    public Animation punchAnimation;
         
-    [Tooltip("Cooldown period (in seconds) between shots")]
         
-    public float rateOfFire = 1f;
+    
 
 
 
@@ -43,7 +34,7 @@ public class BoxingGlove : MonoBehaviour
         
     void Update()
     { 
-        timer -= Time.deltaTime;
+        
 
         if (interactable.attachedToHand)
         {
@@ -64,8 +55,16 @@ public class BoxingGlove : MonoBehaviour
         Debug.Log("Punch() Run");
  
         if (primed)
-        { 
-
+        {
+            Debug.Log("Punching");
+            primed = false;
+            punchAnimation.Play();
         }
+    }
+
+    void Reprime()
+    {
+        Debug.Log("Repriming");
+        primed = true;
     }
 }

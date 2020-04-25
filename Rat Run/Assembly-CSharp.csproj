@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\BoxingGlove.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\BulletSpawner.cs" />
+    <Compile Include="Assets\Scripts\Reprime.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
