@@ -7,64 +7,42 @@ using System;
 
 public class BoxingGlove : MonoBehaviour
 {
-        
+
     public SteamVR_Action_Boolean inputAction;
-  
+
     public SteamVR_Input_Sources source;
- 
-    public GameObject fist;
-    
+
+    public Punch targetFist;
+
     public Interactable interactable;
 
-    public bool primed = true;
-
-    public Animation punchAnimation;
-        
-        
-    
 
 
 
-        
-    void Start()    
-    {      
+
+
+
+
+    void Start()
+    {
         interactable = GetComponent<Interactable>();
     }
 
-        
+
     void Update()
-    { 
-        
+    {
+
 
         if (interactable.attachedToHand)
         {
             Debug.Log("Hand Detected");
             source = interactable.attachedToHand.handType;
- 
+
             if (inputAction.GetState(source))
             {
-                    Debug.Log("Punching");
-                    Punch();
+                Debug.Log("Punching");
+                targetFist.Punching();
             }
-        }    
-    }
-
-        
-    void Punch()  
-    {  
-        Debug.Log("Punch() Run");
- 
-        if (primed)
-        {
-            Debug.Log("Punching");
-            primed = false;
-            punchAnimation.Play();
         }
-    }
-
-    void Reprime()
-    {
-        Debug.Log("Repriming");
-        primed = true;
     }
 }

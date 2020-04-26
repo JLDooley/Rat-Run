@@ -2153,6 +2153,7 @@ GameObject:
   - component: {fileID: 179731653}
   - component: {fileID: 179731652}
   - component: {fileID: 179731651}
+  - component: {fileID: 179731656}
   m_Layer: 0
   m_Name: RightJoystick
   m_TagString: Untagged
@@ -2326,6 +2327,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &179731656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179731650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b07804841467ea94d8df2fec9af91f17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputAction:
+    actionPath: /actions/mech/in/shoot
+    needsReinit: 0
+  source: 0
+  targetFist: {fileID: 316323941}
+  interactable: {fileID: 179731653}
 --- !u!1 &197443149
 GameObject:
   m_ObjectHideFlags: 0
@@ -2394,15 +2413,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 316323940}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b07804841467ea94d8df2fec9af91f17, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d228f006048ed8488e8497a4648e8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputAction:
-    actionPath: 
-    needsReinit: 0
-  source: 0
-  fist: {fileID: 0}
-  interactable: {fileID: 179731653}
   primed: 1
   punchAnimation: {fileID: 316323947}
 --- !u!54 &316323942
