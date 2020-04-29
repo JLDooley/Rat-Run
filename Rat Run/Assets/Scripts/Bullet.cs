@@ -21,13 +21,17 @@ public class Bullet : MonoBehaviour
         transform.position += speed * Time.deltaTime * direction.normalized;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            Debug.Log("Hit"); 
-        }
-        Destroy(gameObject);
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        StartCoroutine(DelayedDestroy());
+    }
+
+    IEnumerator DelayedDestroy()
+    {
+        Debug.Log("Destroying");
+        yield return new WaitForSeconds(0.05f);
+        Destroy(gameObject);
+        Debug.Log("Destroyed");
     }
 }
