@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ArmAim.cs" />
     <Compile Include="Assets\Scripts\ArmController.cs" />
     <Compile Include="Assets\Scripts\BoxingGlove.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />

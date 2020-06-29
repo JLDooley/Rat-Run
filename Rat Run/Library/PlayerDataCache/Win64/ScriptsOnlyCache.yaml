@@ -1526,4 +1526,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/TestArea.unity
-  playerPath: D:/Repos/Rat Run Builds/Rat Run v0.0.01/Rat Run.exe
+  playerPath: D:/Repos/Rat Run Builds/Rat Run v0.0.02/Rat Run.exe
