@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 7}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -418,20 +418,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 96
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Scripts
   m_LastFoldersGridSize: 96
   m_LastProjectPath: D:\Repos\Rat Run\Rat Run
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 6a410000
-    m_LastClickedID: 16746
-    m_ExpandedIDs: 000000004a4100004c4100004e41000050410000524100005441000000ca9a3b
+    m_SelectedIDs: 8e410000
+    m_LastClickedID: 16782
+    m_ExpandedIDs: 000000006c4100006e4100007041000072410000744100007641000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -459,7 +459,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000004a4100004c4100004e410000504100005241000054410000
+    m_ExpandedIDs: 000000006c4100006e41000070410000724100007441000076410000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -552,7 +552,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 729
+  m_LastVerticalScrollValue: 0
 --- !u!114 &18
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -582,9 +582,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: a26b0000
-      m_LastClickedID: 27554
-      m_ExpandedIDs: 3accffff66dfffff4efbfffff4ffffffae3b0000823c0000223d00008e540000e4570000a26b0000446d0000
+      m_SelectedIDs: 38640000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 24d4ffff7ae7ffffb4e7ffffd4e7ffff74f6ffff5efafffff4ffffffde460000344a0000c64a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -644,9 +644,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1.7602739, y: -1.0837517, z: 4.0851912}
+    m_Target: {x: 4.33197, y: -0.33265817, z: 1.587303}
     speed: 2
-    m_Value: {x: 1.7602739, y: -1.0837517, z: 4.0851912}
+    m_Value: {x: 4.33197, y: -0.33265817, z: 1.587303}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -692,13 +692,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.2262657, y: -0.1842987, z: 0.04355189, w: -0.95550966}
+    m_Target: {x: -0.45812026, y: -0.42814592, z: 0.26805452, w: -0.73145366}
     speed: 2
-    m_Value: {x: -0.22625917, y: -0.18429337, z: 0.043550633, w: -0.9554821}
+    m_Value: {x: -0.45810634, y: -0.4281329, z: 0.26804638, w: -0.7314314}
   m_Size:
-    m_Target: 5.8910384
+    m_Target: 1.8171513
     speed: 2
-    m_Value: 5.8910384
+    m_Value: 1.8171513
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -769,10 +769,10 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -421.5
-    m_HBaseRangeMax: 421.5
-    m_VBaseRangeMin: -317
-    m_VBaseRangeMax: 317
+    m_HBaseRangeMin: -512
+    m_HBaseRangeMax: 512
+    m_VBaseRangeMin: -384
+    m_VBaseRangeMax: 384
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -792,7 +792,7 @@ MonoBehaviour:
       y: 21
       width: 843
       height: 634
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 0.8232422, y: 0.8232422}
     m_Translation: {x: 421.5, y: 317}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -800,12 +800,12 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -421.5
-      y: -317
-      width: 843
-      height: 634
+      x: -512
+      y: -385.06287
+      width: 1024
+      height: 770.12573
     m_MinimalGUI: 1
-  m_defaultScale: 1
+  m_defaultScale: 0.8232422
   m_LastWindowPixelSize: {x: 843, y: 655}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
