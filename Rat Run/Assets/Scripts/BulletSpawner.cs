@@ -63,7 +63,7 @@ using Valve.VR;
             
             if (timer <= 0f)
             {
-                Instantiate(prefab, spawner.position, Quaternion.identity);
+                Instantiate(prefab, spawner.position, spawner.rotation);
                 timer = rateOfFire;
             }
 

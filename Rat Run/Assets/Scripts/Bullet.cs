@@ -10,7 +10,9 @@ public class Bullet : MonoBehaviour
 
     void Start()
     {
-        direction = Vector3.forward;
+        direction = transform.forward;
+        
+        
 
         Destroy(gameObject, 5.0f);
     }
