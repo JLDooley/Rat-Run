@@ -24,6 +24,8 @@ public class JoystickController : MonoBehaviour
      
     public SixDOFMapping mapping;
 
+    public float maxAngle;
+
     protected Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.DetachFromOtherHand;
 
     protected float initialMappingOffsetX;
@@ -35,6 +37,9 @@ public class JoystickController : MonoBehaviour
     protected float initialRotationOffsetZ;
 
     Quaternion offsetAngle;
+    float offsetAngleX;
+    float offsetAngleY;
+    float offsetAngleZ;
 
     protected Interactable interactable;
 
@@ -74,6 +79,10 @@ public class JoystickController : MonoBehaviour
             initialMappingOffsetY = mapping.yValue - CalculateLinearMapping(hand.transform, MappingValue.yValue);
             initialMappingOffsetZ = mapping.zValue - CalculateLinearMapping(hand.transform, MappingValue.zValue);
 
+            /*offsetAngleX = hand.transform.localEulerAngles.x;
+            //offsetAngleY = hand.transform.localEulerAngles.y;
+            offsetAngleZ = hand.transform.localEulerAngles.z;*/
+
             offsetAngle = hand.transform.rotation;
 
             hand.AttachObject(gameObject, startingGrabType, attachmentFlags);
@@ -83,6 +92,7 @@ public class JoystickController : MonoBehaviour
     protected virtual void HandAttachedUpdate(Hand hand)
     {
         UpdateLinearMapping(hand.transform);
+        Debug.Log(offsetAngle);
 
         if (hand.IsGrabEnding(this.gameObject))
         {
@@ -120,7 +130,9 @@ public class JoystickController : MonoBehaviour
 
     protected void UpdateRotation(Transform updateTransform)
     {
-        transform.rotation = Quaternion.Euler(updateTransform.rotation.eulerAngles - offsetAngle.eulerAngles);
+
+        baseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
+
     }
 
 }
