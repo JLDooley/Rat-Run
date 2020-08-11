@@ -20,11 +20,19 @@ public class JoystickController : MonoBehaviour
     
     //Position and orientation trackers of the joystick
     public Transform baseTransform;
-    public Transform refTransform;
+
+
+    public Transform refBaseTransform;
+    public Transform refTargetTransform;
+
+
      
     public SixDOFMapping mapping;
 
     public float maxAngle;
+    private float maxRadius;
+    private float currentRadius;
+    private Vector3 normal = new Vector3(0f, 1f, 0f);
 
     protected Hand.AttachmentFlags attachmentFlags = Hand.AttachmentFlags.DetachFromOtherHand;
 
@@ -46,6 +54,8 @@ public class JoystickController : MonoBehaviour
     protected void Awake()
     {
         interactable = GetComponent<Interactable>();
+
+        CalculateLimits();
     }
 
     void Start()
@@ -131,8 +141,26 @@ public class JoystickController : MonoBehaviour
     protected void UpdateRotation(Transform updateTransform)
     {
 
-        baseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
+        //baseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
+        refBaseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
+
+        Vector3 projection = refTargetTransform.position - refBaseTransform.position;
+        float currentRadius = Vector3.ProjectOnPlane(projection, normal).magnitude;
+        //Debug.Log("Current Radius: " + currentRadius);
+
+        if (currentRadius < maxRadius)
+        {
+            baseTransform.rotation = refBaseTransform.rotation;
+        }
 
     }
 
+    protected void CalculateLimits()
+    {
+        float distance = (refTargetTransform.position - refBaseTransform.position).magnitude;
+
+        //Calculate the radius of a circle (on the xz-plane) representing the movement range of the joystick for a given angular limit
+        maxRadius = distance * Mathf.Cos(Mathf.Deg2Rad*maxAngle);
+        //Debug.Log("Max Radius: " + maxRadius);
+    }
 }
