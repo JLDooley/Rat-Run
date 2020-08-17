@@ -35,12 +35,12 @@ public class BoxingGlove : MonoBehaviour
 
         if (interactable.attachedToHand)
         {
-            Debug.Log("Hand Detected");
+            //Debug.Log("Hand Detected");
             source = interactable.attachedToHand.handType;
 
             if (inputAction.GetState(source))
             {
-                Debug.Log("Punching");
+                //Debug.Log("Punching");
                 targetFist.Punching();
             }
         }

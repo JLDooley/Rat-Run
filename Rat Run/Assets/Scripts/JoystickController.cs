@@ -1,7 +1,10 @@
 ﻿using RatRun.GameEngine.VR;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
@@ -29,8 +32,10 @@ public class JoystickController : MonoBehaviour
      
     public SixDOFMapping mapping;
 
+    [Range(0f, 90f)]
     public float maxAngle;
-    private float maxRadius;
+    private float limitRadius;
+    private float limitHeight;
     private float currentRadius;
     private Vector3 normal = new Vector3(0f, 1f, 0f);
 
@@ -50,6 +55,15 @@ public class JoystickController : MonoBehaviour
     float offsetAngleZ;
 
     protected Interactable interactable;
+
+    private Vector3 projection;
+    private Vector3 newProjection;
+    private Vector3 target;
+
+    private Vector3 axis;
+    float angle = 0f;
+
+    public float gizmoSize = 0.01f;
 
     protected void Awake()
     {
@@ -77,6 +91,7 @@ public class JoystickController : MonoBehaviour
     void Update()
     {
         UpdatePosition();
+        refBaseTransform.rotation.ToAngleAxis(out angle, out axis);
     }
 
     protected virtual void HandHoverUpdate(Hand hand)
@@ -102,7 +117,7 @@ public class JoystickController : MonoBehaviour
     protected virtual void HandAttachedUpdate(Hand hand)
     {
         UpdateLinearMapping(hand.transform);
-        Debug.Log(offsetAngle);
+        //Debug.Log(offsetAngle);
 
         if (hand.IsGrabEnding(this.gameObject))
         {
@@ -141,16 +156,47 @@ public class JoystickController : MonoBehaviour
     protected void UpdateRotation(Transform updateTransform)
     {
 
-        //baseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
+        //Rotate the rotation reference gameobjects by the controller's rotation minus the controller's initial offset
         refBaseTransform.transform.rotation = updateTransform.rotation * Quaternion.Inverse(offsetAngle);
 
-        Vector3 projection = refTargetTransform.position - refBaseTransform.position;
-        float currentRadius = Vector3.ProjectOnPlane(projection, normal).magnitude;
+
+        //Project the rotation reference target onto the x-z plane
+        projection = Vector3.ProjectOnPlane(refTargetTransform.position - refBaseTransform.position, normal);
+        //Debug.Log("Projection: " + projection);
+
+        //Calculate the current distance of the projected point from the origin, to see if it exceeds the limit defined by the limit radius
+        float currentRadius = projection.magnitude;
         //Debug.Log("Current Radius: " + currentRadius);
 
-        if (currentRadius < maxRadius)
+        
+
+        if (currentRadius < limitRadius)
         {
             baseTransform.rotation = refBaseTransform.rotation;
+        }
+        else
+        {
+            Debug.Log("Projection: " + projection);
+            Debug.Log("Normalized Projection: " + projection.normalized);
+            //Debug.Log("Limit Radius: " + limitRadius);
+
+            newProjection = projection.normalized * limitRadius;
+            target = new Vector3(projection.x, limitHeight, projection.z);
+            Debug.Log("Target: " + target);
+
+            //float angle = 0f;
+            //Vector3 axis;
+            
+
+
+            //Debug.Log("Angle: " + angle);
+            Debug.Log("Axis: " + axis);
+            Debug.Log(Quaternion.AngleAxis(angle, target));
+
+            baseTransform.rotation = Quaternion.AngleAxis(angle, target);
+            //baseTransform.Rotate(target, 1f, Space.Self);
+
+
         }
 
     }
@@ -160,7 +206,35 @@ public class JoystickController : MonoBehaviour
         float distance = (refTargetTransform.position - refBaseTransform.position).magnitude;
 
         //Calculate the radius of a circle (on the xz-plane) representing the movement range of the joystick for a given angular limit
-        maxRadius = distance * Mathf.Cos(Mathf.Deg2Rad*maxAngle);
-        //Debug.Log("Max Radius: " + maxRadius);
+        maxAngle = 90 - maxAngle;
+        limitRadius = distance * Mathf.Cos(Mathf.Deg2Rad * maxAngle);
+        limitHeight = distance * Mathf.Sin(Mathf.Deg2Rad * maxAngle);
+        Debug.Log("Limit Radius: " + limitRadius);
+        Debug.Log("Limit Height: " + limitHeight);
+    }
+
+    protected void CalculateOrientation()
+    {
+        
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(refBaseTransform.position, refTargetTransform.position);
+        Gizmos.DrawSphere(refTargetTransform.position, gizmoSize);
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(refBaseTransform.position, projection + refBaseTransform.position);
+        Gizmos.DrawLine(refTargetTransform.position, projection + refBaseTransform.position);
+        Gizmos.DrawSphere(projection + refBaseTransform.position, gizmoSize);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(refBaseTransform.position, axis + refBaseTransform.position);
+        Gizmos.DrawSphere(axis + refBaseTransform.position, gizmoSize);
+
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawLine(refBaseTransform.position, target + refBaseTransform.position);
+        Gizmos.DrawSphere(target + refBaseTransform.position, gizmoSize);
     }
 }
