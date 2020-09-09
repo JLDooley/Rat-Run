@@ -172,28 +172,40 @@ public class JoystickController : MonoBehaviour
 
         if (currentRadius < limitRadius)
         {
+            //Debug.Log("Axis: " + axis);
             baseTransform.rotation = refBaseTransform.rotation;
         }
         else
         {
-            Debug.Log("Projection: " + projection);
-            Debug.Log("Normalized Projection: " + projection.normalized);
+            //Debug.Log("Projection: " + projection);
+            //Debug.Log("Normalized Projection: " + projection.normalized);
             //Debug.Log("Limit Radius: " + limitRadius);
 
-            newProjection = projection.normalized * limitRadius;
-            target = new Vector3(projection.x, limitHeight, projection.z);
+            newProjection = projection.normalized;
+
+            //float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2)); //* limitRadius;
+            //float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2)); //* limitRadius;
+
+            //Debug.Log("New Projection: " + newProjection);
+
+            //Debug.Log("Rotated X: " + rotatedX);
+            //Debug.Log("Rotated Z: " + rotatedZ);
+
+            target = Create2DAxis(newProjection);
             Debug.Log("Target: " + target);
 
             //float angle = 0f;
             //Vector3 axis;
+
             
 
-
             //Debug.Log("Angle: " + angle);
-            Debug.Log("Axis: " + axis);
-            Debug.Log(Quaternion.AngleAxis(angle, target));
+            //Debug.Log("Axis: " + axis);
+            
 
-            baseTransform.rotation = Quaternion.AngleAxis(angle, target);
+            baseTransform.rotation = Quaternion.AngleAxis(maxAngle, target);
+
+            //baseTransform.LookAt(target);
             //baseTransform.Rotate(target, 1f, Space.Self);
 
 
@@ -216,6 +228,54 @@ public class JoystickController : MonoBehaviour
     protected void CalculateOrientation()
     {
         
+    }
+
+    protected Vector3 Create2DAxis(Vector3 direction)
+    {
+        if (direction.magnitude != 1)
+        {
+            direction = direction.normalized;
+        }
+
+        float ang;
+        //if (direction.x >= 0 && direction.z >= 0) //Upper-right quadrant
+        //{
+        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2));
+        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2));
+        //}
+        //else if (direction.x < 0 && direction.z >= 0) //Upper-left quadrant
+        //{
+        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2));
+        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) - (Mathf.PI / 2));
+        //}
+        //else if (direction.x < 0 && direction.z < 0) //Lower-left quadrant
+        //{
+        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) - (Mathf.PI / 2));
+        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) - (Mathf.PI / 2));
+        //}
+        //else if (direction.x >= 0 && direction.z < 0) //Lower-right quadrant
+        //{
+        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) - (Mathf.PI / 2));
+        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2));
+        //}
+
+        if (direction.x >= 0)
+        {
+            ang = Mathf.Asin(newProjection.z); // -90 <= ang <= 90
+            if (ang < 0)
+            {
+                ang = ang + (Mathf.PI * 2);
+            }
+        }
+        else
+        {
+            ang = Mathf.PI - Mathf.Asin(newProjection.z); // 90 <= ang <= 270
+        }
+
+        ang = (ang - (Mathf.PI / 2)) % (Mathf.PI * 2);
+
+        return new Vector3(Mathf.Cos(ang), 0f, Mathf.Sin(ang));
+
     }
 
     private void OnDrawGizmos()
