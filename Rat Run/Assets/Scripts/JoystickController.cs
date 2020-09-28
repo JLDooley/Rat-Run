@@ -162,53 +162,24 @@ public class JoystickController : MonoBehaviour
 
         //Project the rotation reference target onto the x-z plane
         projection = Vector3.ProjectOnPlane(refTargetTransform.position - refBaseTransform.position, normal);
-        //Debug.Log("Projection: " + projection);
+
 
         //Calculate the current distance of the projected point from the origin, to see if it exceeds the limit defined by the limit radius
         float currentRadius = projection.magnitude;
-        //Debug.Log("Current Radius: " + currentRadius);
-
-        
 
         if (currentRadius < limitRadius)
         {
-            //Debug.Log("Axis: " + axis);
             baseTransform.rotation = refBaseTransform.rotation;
+
         }
         else
         {
-            //Debug.Log("Projection: " + projection);
-            //Debug.Log("Normalized Projection: " + projection.normalized);
-            //Debug.Log("Limit Radius: " + limitRadius);
-
             newProjection = projection.normalized;
-
-            //float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2)); //* limitRadius;
-            //float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2)); //* limitRadius;
-
-            //Debug.Log("New Projection: " + newProjection);
-
-            //Debug.Log("Rotated X: " + rotatedX);
-            //Debug.Log("Rotated Z: " + rotatedZ);
 
             target = Create2DAxis(newProjection);
             Debug.Log("Target: " + target);
 
-            //float angle = 0f;
-            //Vector3 axis;
-
-            
-
-            //Debug.Log("Angle: " + angle);
-            //Debug.Log("Axis: " + axis);
-            
-
             baseTransform.rotation = Quaternion.AngleAxis(maxAngle, target);
-
-            //baseTransform.LookAt(target);
-            //baseTransform.Rotate(target, 1f, Space.Self);
-
-
         }
 
     }
@@ -238,26 +209,6 @@ public class JoystickController : MonoBehaviour
         }
 
         float ang;
-        //if (direction.x >= 0 && direction.z >= 0) //Upper-right quadrant
-        //{
-        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2));
-        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2));
-        //}
-        //else if (direction.x < 0 && direction.z >= 0) //Upper-left quadrant
-        //{
-        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) + (Mathf.PI / 2));
-        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) - (Mathf.PI / 2));
-        //}
-        //else if (direction.x < 0 && direction.z < 0) //Lower-left quadrant
-        //{
-        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) - (Mathf.PI / 2));
-        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) - (Mathf.PI / 2));
-        //}
-        //else if (direction.x >= 0 && direction.z < 0) //Lower-right quadrant
-        //{
-        //    float rotatedX = Mathf.Cos(Mathf.Acos(newProjection.x) - (Mathf.PI / 2));
-        //    float rotatedZ = Mathf.Sin(Mathf.Asin(newProjection.z) + (Mathf.PI / 2));
-        //}
 
         if (direction.x >= 0)
         {
