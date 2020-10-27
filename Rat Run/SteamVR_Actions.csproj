@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_buggy.cs" />
     <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_default.cs" />
+    <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_gun.cs" />
     <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_mech.cs" />
     <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_mixedreality.cs" />
     <Compile Include="Assets\SteamVR Master\SteamVR_Input\ActionSetClasses\SteamVR_Input_ActionSet_platformer.cs" />
@@ -272,6 +273,12 @@
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
       <HintPath>D:/Repos/Rat Run/Rat Run/Assets/SteamVR Master/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/PackageCache/com.unity.burst@1.1.1/Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.NRefactory">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/PackageCache/com.unity.render-pipelines.core@7.3.1/Editor/ShaderGenerator/ICSharpCode.NRefactory.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:/Unity/Editor/2019.3.8f1/Editor/Data/NetStandard/ref/2.0.0/netstandard.dll</HintPath>

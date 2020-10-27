@@ -85,6 +85,14 @@
     {
       "name": "/actions/mech/in/shoot",
       "type": "boolean"
+    },
+    {
+      "name": "/actions/gun/in/shoot",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/gun/out/haptic",
+      "type": "vibration"
     }
   ],
   "action_sets": [
@@ -106,6 +114,10 @@
     },
     {
       "name": "/actions/mech",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/gun",
       "usage": "single"
     }
   ],

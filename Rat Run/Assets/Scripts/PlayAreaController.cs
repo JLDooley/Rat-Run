@@ -4,12 +4,33 @@ using UnityEngine;
 
 public class PlayAreaController : MonoBehaviour
 {
-    [Tooltip("Desired head position of player when seated")]
+    [Tooltip("Should player VR rig be aligned on startup")]
+    public bool alignOnStartup = true;
+
+
+    [Tooltip("Desired x-z head position of player when seated")]
     public Transform desiredHeadPosition;
 
     //Assign these variables in the inspector, or find them some other way (eg. in Start() )
-    public Transform steamCamera;
+    [Tooltip("The top-level VR rig prefab used by the player")]
     public Transform cameraRig;
+    [Tooltip("The VRCamera associated with this rig")]
+    public Transform steamCamera;
+
+    private void Awake()
+    {
+        if (alignOnStartup)
+        {
+            if (desiredHeadPosition != null)
+            {
+                ResetSeatedPos(desiredHeadPosition);
+            }
+            else
+            {
+                Debug.LogError("Target Transform required. Assign in inspector.", gameObject);
+            }
+        }
+    }
 
     private void Update()
     {

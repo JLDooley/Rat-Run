@@ -63,25 +63,92 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Drive.cs" />
     <Compile Include="Assets\Imports\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\Characters\ThirdPersonCharacter\Scripts\ThirdPersonCharacter.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\AfterburnerPhysicsForce.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\ExplosionFireAndDebris.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\ExplosionPhysicsForce.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\ExtinguishableParticleSystem.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\FireLight.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\Hose.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\ParticleSystemMultiplier.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\SmokeParticles.cs" />
+    <Compile Include="Assets\Imports\Standard Assets\ParticleSystems\Scripts\WaterHoseParticles.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\AccurateLob\Scripts\AccurateLob.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\AccurateLob\Scripts\Bomb.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\AnimatingUnityGUI\Scripts\AnimatingUnityGUI.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\CallbacksExample\Scripts\CallbacksExample.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Flythrough\Scripts\FlythroughCameraController.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Flythrough\Scripts\LookPoint.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Flythrough\Scripts\LookTarget.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Flythrough\Scripts\MovePoint.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\GridMovement\Scripts\GameBoardCSharp.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\GridMovement\Scripts\GamePieceCSharp.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\MemoryGame\Scripts\BoardControl.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\MemoryGame\Scripts\BoxControl.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\OrbitExample\Scripts\PathMover.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\OrbitExample\Scripts\Point.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PathControlledCharacter\Scripts\Controller.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PathControlledCharacter\Scripts\PathPoint.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PathExample\Scripts\PathCameraController.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PathExample\Scripts\PathExample.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\CameraController.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\CharController.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\DeathZone.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\InfiniteBackground.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\LightController.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\Platforms\Scripts\Platform.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PunchAndStab\Scripts\Bolt.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PunchAndStab\Scripts\Ticker.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PutOnPathExample\Scripts\Gizmo.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\PutOnPathExample\Scripts\PutOnPathExample.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\RandomPathGeneration\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\RandomPathGeneration\Scripts\PathGenerator.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\RotatingUnityGUI\Scripts\RotatingUnityGUI.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\ScalingButton\Scripts\ScalingButton.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\SlidingMenu\Scripts\SlidingMenu.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\TurretExample\Scripts\Bound.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\TurretExample\Scripts\Crosshair.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\TurretExample\Scripts\Turret.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\UnevenTerrain\Scripts\Puppeteer.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\ValueToExample\Scripts\ValueToExample.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\WaypointUsage\Scripts\Waypoint.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\WaypointUsage\Scripts\WaypointExample.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\WorkingWithPhysics\Scripts\Bat.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\WorkingWithPhysics\Scripts\Brick.cs" />
+    <Compile Include="Assets\Imports\iTweenExamples\WorkingWithPhysics\Scripts\SimpleCameraFade.cs" />
+    <Compile Include="Assets\MovingFloor.cs" />
     <Compile Include="Assets\Scripts\ArmAim.cs" />
     <Compile Include="Assets\Scripts\ArmController.cs" />
     <Compile Include="Assets\Scripts\BoxingGlove.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\BulletSpawner.cs" />
+    <Compile Include="Assets\Scripts\CalculationFunctions.cs" />
     <Compile Include="Assets\Scripts\CrosshairController.cs" />
     <Compile Include="Assets\Scripts\Debug_DrawOrientation.cs" />
+    <Compile Include="Assets\Scripts\EnemyAI.cs" />
+    <Compile Include="Assets\Scripts\Gun.cs" />
     <Compile Include="Assets\Scripts\JoystickController.cs" />
+    <Compile Include="Assets\Scripts\Offset_Calculator.cs" />
+    <Compile Include="Assets\Scripts\Pathing.cs" />
     <Compile Include="Assets\Scripts\PlayAreaController.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Punch.cs" />
     <Compile Include="Assets\Scripts\SixDOFMapping.cs" />
-    <Compile Include="Assets\Scripts\Windscreen.cs" />
+    <Compile Include="Assets\Scripts\Target.cs" />
+    <Compile Include="Assets\Scripts\WalkSpeedCalculator.cs" />
     <Compile Include="Assets\Scripts\WindscreenTextureSetup.cs" />
-    <Compile Include="Assets\Scripts\Windscreen_Brackeys.cs" />
+    <Compile Include="Assets\TimeControl.cs" />
+    <None Include="Assets\Imports\Standard Assets\ParticleSystems\ParticleSystemsGuidelines.txt" />
+    <None Include="Assets\Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAddSoft.shader" />
     <None Include="Assets\Materials\Shaders\ScreenCutoutShader.shader" />
+    <None Include="Assets\Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAdd.shader" />
+    <None Include="Assets\Imports\Standard Assets\ParticleSystems\Shaders\PriorityParticleAlpha.shader" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Burst.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
@@ -91,6 +158,9 @@
     </Reference>
     <Reference Include="Unity.ProBuilder">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
@@ -103,6 +173,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Animation.Rigging">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -119,17 +192,41 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Animation.Rigging.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/Editor/2019.3.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -310,6 +407,9 @@
     </Reference>
     <Reference Include="Valve.Newtonsoft.Json">
       <HintPath>D:/Repos/Rat Run/Rat Run/Assets/SteamVR Master/SteamVR/Input/Plugins/JSON.NET/Valve.Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/PackageCache/com.unity.burst@1.1.1/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>D:/Unity/Editor/2019.3.8f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
