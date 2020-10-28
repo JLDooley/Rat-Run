@@ -91,11 +91,17 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProGrids.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
@@ -121,6 +127,9 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
@@ -133,29 +142,20 @@
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ShaderGraph.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/Unity/Editor/2019.3.8f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
