@@ -106,6 +106,9 @@
     <Reference Include="Unity.ProBuilder">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Formats.Fbx.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Formats.Fbx.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Burst.Editor.dll</HintPath>
     </Reference>
@@ -124,11 +127,17 @@
     <Reference Include="Unity.ProGrids.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Recorder.Editor">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Animation.Rigging">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Animation.Rigging.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Recorder">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
@@ -157,6 +166,9 @@
     <Reference Include="Unity.Animation.Rigging.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Animation.Rigging.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Autodesk.Fbx">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Autodesk.Fbx.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
@@ -171,6 +183,9 @@
     </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Formats.Fbx.Runtime">
+      <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/Unity.Formats.Fbx.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Repos/Rat Run/Rat Run/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
