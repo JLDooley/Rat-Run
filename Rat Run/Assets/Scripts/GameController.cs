@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Valve.VR;
 
 public class GameController : MonoBehaviour
 {
     public List<ActiveEnemyList> activeEnemies = new List<ActiveEnemyList>();
 
     public Transform playerStartPosition;
+
+    public float fadeTime = 0.3f;
 
     private PlayerController player;
 
@@ -50,7 +53,10 @@ public class GameController : MonoBehaviour
         player.transform.rotation = playerStartPosition.rotation;
     }
 
-    
+    private void Start()
+    {
+        SteamVR_Fade.Start(Color.clear, fadeTime);
+    }
 
 
 

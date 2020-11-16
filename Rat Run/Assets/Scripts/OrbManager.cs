@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 using Valve.VR.InteractionSystem;
 
 [RequireComponent(typeof(Interactable))]
-public class SceneTransition : MonoBehaviour
+public class OrbManager : MonoBehaviour
 {
-    public int levelIndex;
+    public UnityEvent onTriggered;
 
     public Animator orbAnimator;
     public float animationRampTime = 0.5f;
@@ -55,7 +56,7 @@ public class SceneTransition : MonoBehaviour
 
             //Fade here
 
-            TransitionToLevel(levelIndex);
+            onTriggered.Invoke();
         }
     }
 
@@ -77,12 +78,6 @@ public class SceneTransition : MonoBehaviour
         orbAnimator.SetFloat("SpinSpeedMultiplier", currentAnimationSpeed);
     }
     
-
-    public void TransitionToLevel (int levelIndex)
-    {
-        SceneManager.LoadScene(levelIndex);
-    }
-
 
     public float RampOverTime(float current, float target, float duration, float currenttime)
     {

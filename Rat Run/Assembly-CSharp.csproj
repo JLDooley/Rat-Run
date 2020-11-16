@@ -126,6 +126,7 @@
     <Compile Include="Assets\Scripts\Explosion.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Gun.cs" />
+    <Compile Include="Assets\Scripts\LevelTransition.cs" />
     <Compile Include="Assets\Scripts\Mech\ArmAim.cs" />
     <Compile Include="Assets\Scripts\Mech\ArmController.cs" />
     <Compile Include="Assets\Scripts\Mech\BoxingGlove.cs" />
@@ -137,12 +138,12 @@
     <Compile Include="Assets\Scripts\Misc\MovingFloor.cs" />
     <Compile Include="Assets\Scripts\Misc\TimeControl.cs" />
     <Compile Include="Assets\Scripts\Misc\WalkSpeedCalculator.cs" />
+    <Compile Include="Assets\Scripts\OrbManager.cs" />
     <Compile Include="Assets\Scripts\Pathing.cs" />
     <Compile Include="Assets\Scripts\PlayAreaController.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Portal\Offset_Calculator.cs" />
     <Compile Include="Assets\Scripts\Portal\WindscreenTextureSetup.cs" />
-    <Compile Include="Assets\Scripts\SceneTransition.cs" />
     <Compile Include="Assets\Scripts\SpawnManager.cs" />
     <Compile Include="Assets\Scripts\Target.cs" />
     <Compile Include="Assets\Scripts\WaveManager.cs" />
