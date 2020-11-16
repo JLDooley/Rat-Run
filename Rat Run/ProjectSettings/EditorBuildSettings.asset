@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/TestArea.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/Scenes/Main Menu.unity
+    guid: 36225caa6997e4647bf27106541cc0ee
+  - enabled: 1
+    path: Assets/Scenes/Level_Osiris.unity
+    guid: f5bb48194f0f84b49a56d15d3736e79d
   m_configObjects: {}

@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController _instance;
+    public float health;
+    
+    public Collider PlayerHitBox;
+
+    public bool isShielded;
 
     public Transform playerPosition;
+
+    private static PlayerController _instance;
 
     public static PlayerController Instance
     {
@@ -28,6 +34,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogError("Multiple PlayerControllers instances in scene, duplicate '" + gameObject.name + "' removed.");
         }
     }
+
 
 
 

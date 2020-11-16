@@ -5,6 +5,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(EnemyAI))]
 
+
+// Controls movement and orientation of the attached gameObject, should be attached to the root of the hierarchy to be moved
 public class Pathing : MonoBehaviour
 {
     public Transform[] path;
@@ -31,13 +33,6 @@ public class Pathing : MonoBehaviour
     public float rotationSpeed;
 
     public EnemyAI characterAI;
-
-    public PlayerController player;
-
-
-    // Need to track past position to determine current vector (velocity and facing for animations)
-    // Current position - Previous position
-
 
 
     void Start()
@@ -70,21 +65,27 @@ public class Pathing : MonoBehaviour
 
 
         CalculateOrientation();
+
+        if (pathPosition >= 1 && velocity != 0)
+        {
+            StopCharacter();
+        }
     }
 
 
+    void StopCharacter()
+    {
+        targetVelocity = 0f;
+        Debug.Log(characterAI.name + ": Stopping, end of path reached.");
+
+        if (velocity < 0)
+        {
+            velocity = 0;   //Prevent a bug where setting target velocity to 0 would make the gameobject reverse direction and accelerate)
+        }
+    }
+
     private void PathPosition()
     {
-        //Debug.Log("Position: " + pathPosition);
-
-
-        //Time to reach 100%
-        //float changeRate = pathLength / (velocity);
-        //% change per second
-        //changeRate = 1 / changeRate;
-        //Debug.Log("Change Rate: " + changeRate);
-        //changeRate *= Time.deltaTime;
-
         float changeRate = velocity * Time.deltaTime / pathLength;
 
         //pathPosition += changeRate;
@@ -120,7 +121,7 @@ public class Pathing : MonoBehaviour
             //  Adjust the speed to compensate, unless too close to merit a change
             if (!CalculationFunctions.FastApproximately(currentVelocity, targetVelocity, 0.01f))
             {
-                Debug.Log("Calculating");
+                //Debug.Log("Calculating");
 
                 if (currentVelocity > targetVelocity)       // Too fast, slow down
                 {
@@ -156,7 +157,7 @@ public class Pathing : MonoBehaviour
             else
             {
                 lookTarget = transform.position + transform.forward;
-                Debug.Log(lookTarget);
+                //Debug.Log(lookTarget);
             }
 
         }

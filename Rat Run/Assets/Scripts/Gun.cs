@@ -21,6 +21,13 @@ public class Gun : MonoBehaviour
     public GameObject tracerEffect;
     public GameObject impactEffect;
 
+    public enum damageTypeProperty
+    {
+        Physical = 0,
+        Energy = 1
+    };
+    public damageTypeProperty damageType = damageTypeProperty.Physical;
+
     void Start()
     {
         if (interactable == null)
@@ -32,7 +39,9 @@ public class Gun : MonoBehaviour
         {
             Debug.LogError(gameObject.name + ": No interactable detected.");
         }
-            
+
+        //Debug.Log(damageType.ToString());
+
     }
 
     // Update is called once per frame
@@ -44,7 +53,7 @@ public class Gun : MonoBehaviour
 
             if (inputAction[source].stateDown)
             {
-                Debug.Log("Shooting");
+                //Debug.Log("Shooting");
                 Shoot();
             }
         }
@@ -64,7 +73,8 @@ public class Gun : MonoBehaviour
 
                 if (target != null)
                 {
-                    target.TakeDamage(damage);
+                    target.TakeDamage(damage, damageType);
+                    
                 }
 
                 GameObject tracerGO = Instantiate(tracerEffect);
@@ -74,6 +84,16 @@ public class Gun : MonoBehaviour
 
                 GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
                 Destroy(impactGO, 2f);
+            }
+            else
+            {
+                //Fire a tracer off into the void for feedback
+                
+                GameObject tracerGO = Instantiate(tracerEffect);
+                tracerGO.GetComponent<LineRenderer>().SetPosition(0, rayOrigin.position);
+                tracerGO.GetComponent<LineRenderer>().SetPosition(1, rayOrigin.position + rayOrigin.forward * 20f);
+
+                Destroy(tracerGO, 0.4f);
             }
 
         }

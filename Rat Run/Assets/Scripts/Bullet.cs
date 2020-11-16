@@ -26,14 +26,24 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        StartCoroutine(DelayedDestroy());
+        //Ignore specific collisions (eg for shooting through a shield). Can't use layermasks because I want to collide with the 'hitbox' layer on the player
+        if (!collision.gameObject.CompareTag("Enemy"))
+        {
+            StartCoroutine(DelayedDestroy());
+        }
+        else
+        {
+            Physics.IgnoreCollision(gameObject.GetComponent<Collider>(), collision.collider);
+        }
+        
     }
 
     IEnumerator DelayedDestroy()
     {
-        Debug.Log("Destroying");
+        //Small delay to ensure any physics impacts take place
+        //Debug.Log("Destroying");
         yield return new WaitForSeconds(0.05f);
         Destroy(gameObject);
-        Debug.Log("Destroyed");
+        //Debug.Log("Destroyed");
     }
 }
